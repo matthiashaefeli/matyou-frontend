@@ -1,0 +1,57 @@
+.container {
+  width: 200px;
+  margin: 10em auto
+}
+
+.side {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: turn 10s linear infinite;
+}
+
+.front {
+  transform: translateZ(100px);
+  background-color: aliceblue;
+}
+
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+  background-color: aliceblue;
+}
+
+.left {
+  transform: translateX(-100px) rotateY(-90deg);
+  background-color: aliceblue;
+}
+
+.right {
+  transform: translateX(100px) rotateY(90deg);
+  background-color: aliceblue;
+}
+
+.up {
+  transform: translateY(-100px) rotateX(90deg);
+  background-color: aliceblue;
+}
+
+.down {
+  transform: translateY(100px) rotateX(-90deg);
+  background-color: aliceblue;
+}
+
+@keyframes turn {
+  from { transform: rotate3d(0, 0, 0, 0); }
+  to { transform: rotate3d(1, 1, 0, 360deg); }
+}
