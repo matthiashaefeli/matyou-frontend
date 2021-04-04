@@ -21,12 +21,12 @@ const Home = () => {
   return (
     <div className='container'>
     <div className='cube'>
-      <div className='front' onClick={handleClick}>Notes</div>
-      <div className='back' onClick={handleClick}>Challenges</div>
-      <div className='left' onClick={handleClick}>Books</div>
-      <div className='right' onClick={handleClick}>About</div>
-      <div className='up'>Coming soon</div>
-      <div className='down' onClick={handleClick}>Blogs</div>
+      <div className='front' onClick={handleClick}><b>Notes</b></div>
+      <div className='back' onClick={handleClick}><b>Challenges</b></div>
+      <div className='left' onClick={handleClick}><b>Books</b></div>
+      <div className='right' onClick={handleClick}><b>About</b></div>
+      <div className='up'><b>Coming soon</b></div>
+      <div className='down' onClick={handleClick}><b>Blogs</b></div>
     </div>
   </div>
   );
