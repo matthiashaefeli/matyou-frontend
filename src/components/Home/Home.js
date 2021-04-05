@@ -1,22 +1,48 @@
 import React from 'react';
-import './home.css';
+import './home.scss';
 import { useHistory } from 'react-router-dom';
+import Font, { Text } from 'react-font'
 
 const Home = () => {
   const history = useHistory();
-  const handleClick = (route) => history.push(`/${route}`);
+
+  const handleClick = (event) => {
+    const route = event.target.innerText.toLowerCase()
+    const id = event.target.id
+    let ids = ['front', 'back', 'left', 'right', 'up', 'down']
+    let filteredIds = ids.filter(function(el) {return el != id})
+    // document.getElementsByClassName('cube')[0].style.animation = 'turn 50s linear infinite'
+
+    filteredIds.forEach(element => {
+      let el = document.getElementById(element)
+      el.style.transform = el.dataset.style
+    })
+
+    setTimeout(() => {
+      filteredIds.forEach(element => {
+        let el = document.getElementById(element)
+        el.remove()
+      })
+      // document.getElementById(id).style.transform = 'translateZ(100px)'
+      document.getElementById(id).style.transform = 'scale(5)'
+    }, 1000);
+
+    setTimeout(() => {  history.push(`/${route}`) }, 1500);
+  };
 
   return (
-    <div className='container'>
-    <div className='cube'>
-      <div className='side front' onClick={() => handleClick('notes')}>Notes</div>
-      <div className='side back' onClick={() => handleClick('challenges')}>Challenges</div>
-      <div className='side left' onClick={() => handleClick('books')}>Books</div>
-      <div className='side right' onClick={() => handleClick('about')}>About</div>
-      <div className='side up'>Coming soon</div>
-      <div className='side down' onClick={() => handleClick('blogs')}>Blog</div>
-    </div>
-  </div>
+      <Font family='Actor'>
+        <div className='container'>
+          <div className='cube cubeAnimation'>
+            <div id='front' onClick={handleClick} data-style='translateZ(2000px) rotateZ(360deg)'>Notes</div>
+            <div id='back' onClick={handleClick} data-style='translateZ(-2000px) rotateY(180deg)  rotateZ(360deg)'>Challenges</div>
+            <div id='left' onClick={handleClick} data-style='translateX(-2000px) rotateY(-90deg) rotateZ(360deg)'>Books</div>
+            <div id='right' onClick={handleClick} data-style='translateX(2000px) rotateY(90deg) rotateZ(360deg)'>About</div>
+            <div id='up' data-style='translateY(-2000px) rotateX(90deg) rotateZ(360deg)'>Coming soon</div>
+            <div id='down' onClick={handleClick} data-style='translateY(2000px) rotateX(-90deg) rotateZ(360deg)'>Blogs</div>
+          </div>
+        </div>
+      </Font>
   );
 };
 
