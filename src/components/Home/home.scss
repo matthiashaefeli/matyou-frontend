@@ -10,7 +10,7 @@
   height: 200px;
   transform-style: preserve-3d;
   /* transform: rotate3d(1, 1, 0, 45deg); */
-  animation: turn 10s linear infinite;
+  // animation: turn 10s linear infinite;
 
   a {
     text-decoration: none;
@@ -32,32 +32,36 @@
   }
 }
 
-.front {
+.cubeAnimation {
+  animation: turn 10s linear infinite;
+}
+
+#front {
   transform: translateZ(100px);
   background-image: url('../../assets/images/know.jpg');
 }
 
-.back {
+#back {
   transform: translateZ(-100px) rotateY(180deg) rotateZ(90deg);
   background-image: url('../../assets/images/stairs.png');
 }
 
-.left {
+#left {
   transform: translateX(-100px) rotateY(-90deg);
   background-image: url('../../assets/images/book.jpg');
 }
 
-.right {
+#right {
   transform: translateX(100px) rotateY(90deg);
   background-image: url('../../assets/images/about.jpg');
 }
 
-.up {
+#up {
   transform: translateY(-100px) rotateX(90deg);
   color: white;
 }
 
-.down {
+#down {
   transform: translateY(100px) rotateX(-90deg);
   background-image: url('../../assets/images/blog.jpg');
 }
@@ -66,9 +70,3 @@
   from { transform: rotate3d(0, 0, 0, 0); }
   to { transform: rotate3d(1, 1, 0, 360deg); }
 }
-
-// ################## background images ###########
-
-// .bookLink {
-//   background-image: url('../../assets/images/book.jpg');
-// }

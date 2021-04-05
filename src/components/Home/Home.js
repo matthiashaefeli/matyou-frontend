@@ -1,34 +1,48 @@
 import React from 'react';
 import './home.scss';
 import { useHistory } from 'react-router-dom';
+import Font, { Text } from 'react-font'
 
 const Home = () => {
   const history = useHistory();
 
   const handleClick = (event) => {
-    console.log(event.target.className)
-    console.log(event.target.dataset.val)
-    document.getElementsByClassName('front')[0].style.transform = 'translateZ(2000px) rotateZ(360deg)'
-    document.getElementsByClassName('back')[0].style.transform = 'translateZ(-2000px) rotateY(180deg)  rotateZ(360deg)'
-    document.getElementsByClassName('left')[0].style.transform = 'translateX(-2000px) rotateY(-90deg) rotateZ(360deg)'
-    document.getElementsByClassName('right')[0].style.transform = 'translateX(2000px) rotateY(90deg) rotateZ(360deg)'
-    document.getElementsByClassName('up')[0].style.transform = 'translateY(-2000px) rotateX(90deg) rotateZ(360deg)'
-    document.getElementsByClassName('down')[0].style.transform = 'translateY(2000px) rotateX(-90deg) rotateZ(360deg)'
     const route = event.target.innerText.toLowerCase()
-    setTimeout(() => {  history.push(`/${route}`) }, 1000);
+    const id = event.target.id
+    let ids = ['front', 'back', 'left', 'right', 'up', 'down']
+    let filteredIds = ids.filter(function(el) {return el != id})
+    // document.getElementsByClassName('cube')[0].style.animation = 'turn 50s linear infinite'
+
+    filteredIds.forEach(element => {
+      let el = document.getElementById(element)
+      el.style.transform = el.dataset.style
+    })
+
+    setTimeout(() => {
+      filteredIds.forEach(element => {
+        let el = document.getElementById(element)
+        el.remove()
+      })
+      // document.getElementById(id).style.transform = 'translateZ(100px)'
+      document.getElementById(id).style.transform = 'scale(5)'
+    }, 1000);
+
+    setTimeout(() => {  history.push(`/${route}`) }, 1500);
   };
 
   return (
-    <div className='container'>
-    <div className='cube'>
-      <div className='front' onClick={handleClick}><b>Notes</b></div>
-      <div className='back' onClick={handleClick}><b>Challenges</b></div>
-      <div className='left' onClick={handleClick}><b>Books</b></div>
-      <div className='right' onClick={handleClick}><b>About</b></div>
-      <div className='up'><b>Coming soon</b></div>
-      <div className='down' onClick={handleClick}><b>Blogs</b></div>
-    </div>
-  </div>
+      <Font family='Actor'>
+        <div className='container'>
+          <div className='cube cubeAnimation'>
+            <div id='front' onClick={handleClick} data-style='translateZ(2000px) rotateZ(360deg)'>Notes</div>
+            <div id='back' onClick={handleClick} data-style='translateZ(-2000px) rotateY(180deg)  rotateZ(360deg)'>Challenges</div>
+            <div id='left' onClick={handleClick} data-style='translateX(-2000px) rotateY(-90deg) rotateZ(360deg)'>Books</div>
+            <div id='right' onClick={handleClick} data-style='translateX(2000px) rotateY(90deg) rotateZ(360deg)'>About</div>
+            <div id='up' data-style='translateY(-2000px) rotateX(90deg) rotateZ(360deg)'>Coming soon</div>
+            <div id='down' onClick={handleClick} data-style='translateY(2000px) rotateX(-90deg) rotateZ(360deg)'>Blogs</div>
+          </div>
+        </div>
+      </Font>
   );
 };
 
