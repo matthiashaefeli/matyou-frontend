@@ -11,7 +11,6 @@ const Home = () => {
     const id = event.target.id
     let ids = ['front', 'back', 'left', 'right', 'up', 'down']
     let filteredIds = ids.filter(function(el) {return el != id})
-    // document.getElementsByClassName('cube')[0].style.animation = 'turn 50s linear infinite'
 
     filteredIds.forEach(element => {
       let el = document.getElementById(element)
@@ -23,7 +22,7 @@ const Home = () => {
         let el = document.getElementById(element)
         el.remove()
       })
-      // document.getElementById(id).style.transform = 'translateZ(100px)'
+
       document.getElementById(id).style.transform = 'scale(5)'
     }, 1000);
 
