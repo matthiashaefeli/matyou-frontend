@@ -9,7 +9,7 @@ class Blog extends Component {
 
     return (
       <article className='blogHome'>
-        <Title title={titleText} color={'white'} />
+        <Title title={titleText} color={'black'} />
         <Detail />
       </article>
     )
