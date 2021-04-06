@@ -4,8 +4,9 @@ import Home from '../Home/Home';
 import Note from '../Note/Note';
 import Challenge from '../Challenge/Challenge';
 import Blog from '../Blog/Blog';
-import Book from '../Book/Book';
+import Book from '../Book/Index';
 import About from '../About/About';
+import BookDetail from '../BookDetail/Index';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact path='/blogs' component={Blog} />
         <Route exact path='/books' component={Book} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/book-detail' component={BookDetail} />
         <Route component={Error} />
     </Switch>
     );
