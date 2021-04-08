@@ -10,22 +10,26 @@ class Blog extends Component {
     blogs: [],
   }
 
-  componentDidMount = () => {
+  loadDataFromServer = () => {
     axios.get('https://warm-anchorage-02243.herokuapp.com/data/blogs')
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            blogs: result.data
-          })
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
+    .then(
+      result => {
+        this.setState({
+          isLoaded: true,
+          blogs: result.data
+        })
+      },
+      error => {
+        this.setState({
+          isLoaded: true,
+          error
+        })
+      }
+    )
+  }
+
+  componentDidMount = () => {
+    this.loadDataFromServer();
   }
 
   render() {

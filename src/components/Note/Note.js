@@ -11,23 +11,27 @@ class Note extends Component {
     noteCount: 0
   }
 
-  componentDidMount = () => {
+  loadDataFromServer = () => {
     axios.get('https://warm-anchorage-02243.herokuapp.com/data/notes')
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            notes: result.data,
-            noteCount: result.data.length
-          })
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
+    .then(
+      result => {
+        this.setState({
+          isLoaded: true,
+          notes: result.data,
+          noteCount: result.data.length
+        })
+      },
+      error => {
+        this.setState({
+          isLoaded: true,
+          error
+        })
+      }
+    )
+  }
+
+  componentDidMount = () => {
+    this.loadDataFromServer();
   }
 
   handleSearch = (e) => {
