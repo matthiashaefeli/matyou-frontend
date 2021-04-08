@@ -1,18 +1,54 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import './blog.scss';
-import Title from '../Title/Title';
-import Detail from './Detail'
+import Detail from './Detail';
 
 class Blog extends Component {
+  state = {
+    error: null,
+    isLoaded: false,
+    blogs: [],
+  }
+
+  componentDidMount = () => {
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/blogs')
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            blogs: result.data
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
+  }
+
   render() {
-    const titleText = "I've read a lot of blogs but I don't have a favorite. Sometimes I bookmark a good blog, but if I need it again I certainly won't find it. Writing a blog and doing more research on something helps me to better understand and learn. This section is a mix of Blogs, Tutorials, and Information."
+    const { error, isLoaded, blogs } = this.state;
+
+    if (error) {
+      // return <NetworkError />
+    }
+
+    if (!isLoaded) {
+      // return <Loading />
+    }
 
     return (
-      <article className='blogHome'>
-        <Title title={titleText} color={'black'} />
-        <Detail />
-      </article>
-    )
+      <>
+        <p >{this.state.blogs.length} Blogs</p>
+        <div>
+          {blogs.map(blog => (
+            <Detail key={blog.id} blog={blog} type='blog' />
+          ))}
+        </div>
+      </>
+    );
   }
 }
 

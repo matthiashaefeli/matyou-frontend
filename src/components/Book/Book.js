@@ -37,11 +37,11 @@ class Book extends Component {
     if (!isLoaded) {
       // return <Loading />
     }
-console.log(books)
+
     return (
       <>
-        <p className='bookLength'>{this.state.books.length} Books</p>
-        <div className='bookContainer'>
+        <p>{this.state.books.length} Books</p>
+        <div>
           {books.map(book => (
             <Detail key={book.id} detail={book} type='book' />
           ))}
