@@ -9,22 +9,26 @@ class Book extends Component {
     error: ''
   };
 
-  componentDidMount = () => {
+  loadDataFromServer = () => {
     axios.get('https://warm-anchorage-02243.herokuapp.com/data/books')
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            books: result.data
-          })
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
+    .then(
+      result => {
+        this.setState({
+          isLoaded: true,
+          books: result.data
+        })
+      },
+      error => {
+        this.setState({
+          isLoaded: true,
+          error
+        })
+      }
+    )
+  }
+
+  componentDidMount = () => {
+    this.loadDataFromServer();
   }
 
   render() {
