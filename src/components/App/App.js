@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
-import Note from '../Note/Note';
+import Note from '../Note/Index';
 import Challenge from '../Challenge/Challenge';
-import Blog from '../Blog/Blog';
+import Blog from '../Blog/Index';
 import Book from '../Book/Index';
 import About from '../About/About';
 import BookDetail from '../BookDetail/Index';

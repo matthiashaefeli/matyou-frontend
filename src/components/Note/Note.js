@@ -1,17 +1,74 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import './note.scss';
-import Title from '../Title/Title';
-import Detail from './Detail'
 
 class Note extends Component {
-  render() {
-    const titleText = "Learning something new is a good feeling, not remembering it afterwards is not a good feeling. You know that you've seen it before and you google it over and over again. I write it down for myself and save it here. These are all my little notes."
+  state = {
+    error: null,
+    isLoaded: false,
+    notes: [],
+    searchText: '',
+    noteCount: 0
+  }
 
+  componentDidMount = () => {
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/notes')
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            notes: result.data,
+            noteCount: result.data.length
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
+  }
+
+  handleSearch = (e) => {
+    let filteredNotes
+    filteredNotes = this.state.notes
+    .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+    console.log(e.target.value)
+    this.setState({
+      searchText: e.target.value,
+      noteCount: filteredNotes.length
+    })
+  }
+  render() {
+    const { error, isLoaded, notes, noteCount } = this.state;
+
+    if (error) {
+      // return <NetworkError />
+    }
+
+    if (!isLoaded) {
+      // return <Loading />
+    }
     return (
-      <article className='noteHome'>
-        <Title title={titleText} color={'black'} />
-        {/* <Detail /> */}
-      </article>
+      <>
+        <div className='searchTextInput'>
+          <input
+            type='text'
+            value={this.state.searchText}
+            onChange={this.handleSearch.bind(this)}
+            placeholder='Search....'
+          />
+          <p className='noteLength'>{noteCount} Notes</p>
+        </div>
+        <div className='noteContainer'>
+          {notes
+            .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+            .map(note => (
+              <p key={note.id} onClick={() => window.open(note.url, "_blank")}>{note.title}</p>
+            ))}
+        </div>
+      </>
     )
   }
 }
