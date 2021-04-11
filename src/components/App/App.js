@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
 import Note from '../Note/Index';
-import Challenge from '../Challenge/Challenge';
+import Challenge from '../Challenge/Index';
 import Blog from '../Blog/Index';
 import Book from '../Book/Index';
 import About from '../About/About';

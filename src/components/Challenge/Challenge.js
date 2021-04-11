@@ -1,17 +1,53 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import './challenge.scss';
-import Title from '../Title/Title';
 import Detail from './Detail';
 
 class Challenge extends Component {
+  state = {
+    error: null,
+    isLoaded: false,
+    challenges: [],
+  }
+
+  componentDidMount = () => {
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/challenges')
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            challenges: result.data
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
+  }
+
   render() {
-    const titleText = "On my journey to learn to code I used a lot of different challenges. Here are some Ruby and Javascript challenges. Have fun!"
+    const { error, isLoaded, challenges } = this.state;
+
+    if (error) {
+      // return <NetworkError />
+    }
+
+    if (!isLoaded) {
+      // return <Loading />
+    }
 
     return (
-      <article className='challengeHome'>
-        <Title title={titleText} color={'black'} />
-        <Detail />
-      </article>
+      <>
+        <p>{this.state.challenges.length} Challenges</p>
+        <div>
+          {challenges.map(challenge => (
+            <Detail key={challenge.id} detail={challenge} type='challenge' />
+          ))}
+        </div>
+      </>
     )
   }
 }
