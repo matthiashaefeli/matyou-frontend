@@ -10,7 +10,7 @@ class Challenge extends Component {
     challenges: [],
   }
 
-  componentDidMount = () => {
+  loadDataFromServer = () => {
     axios.get('https://warm-anchorage-02243.herokuapp.com/data/challenges')
       .then(
         result => {
@@ -26,6 +26,10 @@ class Challenge extends Component {
           })
         }
       )
+  }
+
+  componentDidMount = () => {
+    this.loadDataFromServer();
   }
 
   render() {
