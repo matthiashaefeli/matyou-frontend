@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import './note.scss';
+import Topic from '../Topic/Index';
 
 class Note extends Component {
   state = {
@@ -45,6 +46,15 @@ class Note extends Component {
       })
     })
   }
+
+  handleQuickSearch = (e) => {
+    this.handleSearch({target: { value: e.target.innerText }})
+  }
+
+  clearSearch = () => {
+    this.handleSearch({target: { value: '' }})
+  }
+
   render() {
     const { error, isLoaded, notes, noteCount } = this.state;
 
@@ -57,6 +67,7 @@ class Note extends Component {
     }
     return (
       <>
+        <Topic handleQuickSearch={this.handleQuickSearch} />
         <div>
           <input
             type='text'
@@ -64,6 +75,7 @@ class Note extends Component {
             onChange={this.handleSearch.bind(this)}
             placeholder='Search....'
           />
+          <button onClick={this.clearSearch}>Clear Search</button>
           <p>{noteCount} Notes</p>
         </div>
         <div>
