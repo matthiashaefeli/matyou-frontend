@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './note.scss';
 import Title from '../Title/Title';
 import Note from './Note'
+import './note.scss';
 
 class Index extends Component {
   render() {

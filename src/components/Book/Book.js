@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Detail from './Detail';
+import Loading from '../Loading/Loading';
 
 class Book extends Component {
   state = {
@@ -39,7 +40,7 @@ class Book extends Component {
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
 
     return (

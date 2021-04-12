@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import './challenge.scss';
 import Detail from './Detail';
+import Loading from '../Loading/Loading';
+import './challenge.scss';
 
 class Challenge extends Component {
   state = {
@@ -40,7 +41,7 @@ class Challenge extends Component {
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
 
     return (
