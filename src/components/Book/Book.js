@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Detail from './Detail';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 class Book extends Component {
   state = {
@@ -36,7 +37,7 @@ class Book extends Component {
     const { error, isLoaded, books } = this.state;
 
     if (error) {
-      // return <NetworkError />
+      return <Error />
     }
 
     if (!isLoaded) {

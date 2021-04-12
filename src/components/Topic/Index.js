@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 class Topic extends Component {
   state = {
@@ -34,11 +36,11 @@ class Topic extends Component {
     const { error, isLoaded, topics } = this.state;
 
     if (error) {
-      // return <NetworkError />
+      return <Error />
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
     return (
       <div>

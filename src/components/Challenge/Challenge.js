@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Detail from './Detail';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 import './challenge.scss';
 
 class Challenge extends Component {
@@ -37,7 +38,7 @@ class Challenge extends Component {
     const { error, isLoaded, challenges } = this.state;
 
     if (error) {
-      // return <NetworkError />
+      return <Error />
     }
 
     if (!isLoaded) {

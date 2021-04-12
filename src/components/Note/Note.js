@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Topic from '../Topic/Index';
 import Loading from '../Loading/Loading'
+import Error from '../Error/Error';
 import './note.scss';
 
 class Note extends Component {
@@ -60,7 +61,7 @@ class Note extends Component {
     const { error, isLoaded, notes, noteCount } = this.state;
 
     if (error) {
-      // return <NetworkError />
+      return <Error />
     }
 
     if (!isLoaded) {
