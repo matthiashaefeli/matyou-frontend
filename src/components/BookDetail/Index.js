@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Comment from '../Comment/Index';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 class Index extends Component {
   constructor(props) {
@@ -47,11 +49,11 @@ class Index extends Component {
     }
 
     if (error) {
-      // return  <NetworkError />
+      return  <Error />
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
 
     return (
