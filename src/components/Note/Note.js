@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import './note.scss';
 import Topic from '../Topic/Index';
+import Loading from '../Loading/Loading'
+import './note.scss';
 
 class Note extends Component {
   state = {
@@ -63,7 +64,7 @@ class Note extends Component {
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
     return (
       <>

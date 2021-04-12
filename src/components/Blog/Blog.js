@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import './blog.scss';
 import Detail from './Detail';
+import Loading from '../Loading/Loading';
+import './blog.scss';
 
 class Blog extends Component {
   state = {
@@ -40,7 +41,7 @@ class Blog extends Component {
     }
 
     if (!isLoaded) {
-      // return <Loading />
+      return <Loading />
     }
 
     return (
