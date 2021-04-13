@@ -6,7 +6,7 @@ class Index extends Component {
     const { comment } = this.props.comment;
 
     return (
-      <li className='commentText' dangerouslySetInnerHTML={{ __html: comment }} />
+      <li dangerouslySetInnerHTML={{ __html: comment }} />
     );
   }
 }

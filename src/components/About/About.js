@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import Title from '../Title/Title';
-import './about.scss'
+import './about.scss';
+import Navbar from '../Navbar/Navbar';
 
 class About extends Component {
   titleText = "Hi! I'm Mat"
@@ -10,6 +11,7 @@ class About extends Component {
   render() {
     return (
       <article className='aboutHome'>
+        <Navbar />
         <Title title={this.titleText} color={'black'} />
         <div className='aboutText'>
           This is my notebook. I'm working as a Software Engineer @ GraceHill and here is my journey.

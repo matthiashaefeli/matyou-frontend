@@ -3,6 +3,7 @@ import axios from 'axios';
 import Comment from '../Comment/Index';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
+import Navbar from '../Navbar/Navbar';
 
 class Index extends Component {
   constructor(props) {
@@ -57,15 +58,16 @@ class Index extends Component {
     }
 
     return (
-      <article className='commentHome'>
-        <div className='commentContainer'>
-          <div className='commentImage'>
+      <article>
+        <Navbar />
+        <div>
+          <div>
             <img src={url} alt={title} style={sectionStyle} />
           </div>
           <div>
             <p><b>Title: {title}</b></p>
             <p><b>Notes: </b></p>
-            <ul className='commentComment'>
+            <ul>
               <p >
               {comments.map(comment => (
                 <Comment key={comment.id} comment={comment} type='comment' />
