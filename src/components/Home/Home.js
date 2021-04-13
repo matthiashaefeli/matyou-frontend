@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.scss';
 import { useHistory } from 'react-router-dom';
-import Font, { Text } from 'react-font'
+import Font from 'react-font'
 
 const Home = () => {
   const history = useHistory();
@@ -10,7 +10,7 @@ const Home = () => {
     const route = event.target.innerText.toLowerCase()
     const id = event.target.id
     let ids = ['front', 'back', 'left', 'right', 'up', 'down']
-    let filteredIds = ids.filter(function(el) {return el != id})
+    let filteredIds = ids.filter(function(el) {return el !== id})
 
     filteredIds.forEach(element => {
       let el = document.getElementById(element)
