@@ -35,3 +35,30 @@
     width: 20vw;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .noteHome {
+    flex-direction: column;
+  }
+
+  .noteSearch {
+    width: 80vw;
+    text-align: center;
+  }
+
+  .inputField {
+    margin: 0 auto;
+    height: 3em;
+    width: 200px;
+  }
+
+  .clearSearch {
+    margin: 10px auto;
+    height: 3em;
+    width: 210px;
+  }
+
+  .noteContainer {
+    width: 80vw;
+  }
+}

@@ -26,3 +26,17 @@
     width: 20vw;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .quickSearchButton {
+    margin: 5px auto 0 auto;
+    height: 3em;
+    width: 210px;
+  }
+
+  .topicDropDown {
+    margin: 0px auto;
+    height: 10em;
+    width: 210px;
+  }
+}
