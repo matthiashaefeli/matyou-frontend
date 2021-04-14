@@ -20,9 +20,9 @@ class Detail extends Component {
 Detail.propTypes = {
   detail: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    body: PropTypes.object.isRequired
   }),
   type: PropTypes.string.isRequired
 }

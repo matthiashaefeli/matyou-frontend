@@ -6,17 +6,15 @@ import { faHome,
          faBlog,
          faStickyNote,
          faGrimace,
+         faCube,
          faGlasses } from '@fortawesome/free-solid-svg-icons';
 
 class Navbar extends Component {
   render() {
     return (
       <div className='links'>
-        <a href='/'><FontAwesomeIcon icon={faHome} />
+        <a href='/'><FontAwesomeIcon icon={faCube} />
           <span className='fontLink'> Home</span>
-        </a>
-        <a href='/challenges'><FontAwesomeIcon icon={faGlasses} />
-          <span className='fontLink'> Challenge</span>
         </a>
         <a href='/notes'><FontAwesomeIcon icon={faStickyNote} />
           <span className='fontLink'> Notes</span>
@@ -26,6 +24,9 @@ class Navbar extends Component {
         </a>
         <a href='/blogs'><FontAwesomeIcon icon={faBlog} />
           <span className='fontLink'> Blog</span>
+        </a>
+        <a href='/challenges'><FontAwesomeIcon icon={faGlasses} />
+          <span className='fontLink'> Challenge</span>
         </a>
         <a href='/about'><FontAwesomeIcon icon={faGrimace} />
           <span className='fontLink'> About</span>

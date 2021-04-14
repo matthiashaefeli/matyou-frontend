@@ -1,0 +1,37 @@
+.noteHome {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2em;
+  justify-content: space-around;
+}
+
+.noteSearch {
+  flex-direction: column;
+  margin: auto;
+  text-align: left;
+  padding-left: 1em;
+  width: 40vw;
+  height: 55vh;
+}
+
+.noteContainer {
+  width: 40vw;
+  height: 55vh;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+.noteText:hover {
+  background-color: rgba(220,220,220, 1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+  .noteSearch {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+  }
+}

@@ -1,0 +1,28 @@
+.topicContainer {
+  p:hover {
+    cursor: pointer;
+  }
+}
+
+.quickSearchButton {
+  margin-top: 10px;
+  width: 100px;
+}
+
+.topicDropDown {
+  margin: -1px 1px;
+  border: 1px solid grey;
+  width: 96px;
+  height: 100px;
+  overflow: auto;
+
+  p {
+    margin: 4px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .quickSearchButton {
+    width: 20vw;
+  }
+}
