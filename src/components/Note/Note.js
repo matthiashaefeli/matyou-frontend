@@ -49,8 +49,8 @@ class Note extends Component {
     })
   }
 
-  handleQuickSearch = (e) => {
-    this.handleSearch({target: { value: e.target.innerText }})
+  handleQuickSearch = (text) => {
+    this.handleSearch({target: { value: text }})
   }
 
   clearSearch = () => {
@@ -68,26 +68,40 @@ class Note extends Component {
       return <Loading />
     }
     return (
-      <>
-        <Topic handleQuickSearch={this.handleQuickSearch} />
-        <div>
+      <div className='noteHome'>
+        <div className='noteSearch'>
+          <p>Showing {noteCount} Notes</p>
           <input
+            className='inputField'
             type='text'
             value={this.state.searchText}
             onChange={this.handleSearch.bind(this)}
             placeholder='Search....'
           />
-          <button onClick={this.clearSearch}>Clear Search</button>
-          <p>{noteCount} Notes</p>
+          <button
+            className='clearSearch'
+            onClick={this.clearSearch}
+          >
+            Clear Search
+          </button>
+          <Topic handleQuickSearch={this.handleQuickSearch} />
         </div>
-        <div>
-          {notes
-            .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
-            .map(note => (
-              <p onClick={() => window.open(note.url, "_blank")} key={note.id}>{note.title}</p>
-            ))}
+        <div className='noteContainer'>
+          <div className='notes'>
+            {notes
+              .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+              .map(note => (
+                <p
+                  className='noteText'
+                  onClick={() => window.open(note.url, "_blank")}
+                  key={note.id}
+                >
+                  {note.title}
+                </p>
+              ))}
+          </div>
         </div>
-      </>
+      </div>
     )
   }
 }

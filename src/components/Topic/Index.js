@@ -2,12 +2,27 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
+import './index.scss';
 
 class Topic extends Component {
   state = {
     isLoaded: false,
     errors: '',
-    topics: []
+    topics: [],
+    showMenu: false
+  }
+
+  handleDropDown = () => {
+    this.setState({
+      showMenu: !this.state.showMenu
+    })
+  }
+
+  handleSearch = (e) => {
+    this.props.handleQuickSearch(e.target.innerText);
+    this.setState({
+      showMenu: false
+    })
   }
 
   loadDataFromServer = () => {
@@ -32,8 +47,7 @@ class Topic extends Component {
     this.loadDataFromServer();
   }
   render() {
-    const { handleQuickSearch } = this.props;
-    const { error, isLoaded, topics } = this.state;
+    const { error, isLoaded, topics, showMenu } = this.state;
 
     if (error) {
       return <Error />
@@ -43,11 +57,23 @@ class Topic extends Component {
       return <Loading />
     }
     return (
-      <div>
-      {topics
-        .map(topic => (
-          <p key={topic.id}  onClick={handleQuickSearch.bind(this)}>{topic.title}</p>
-        ))}
+      <div className='topicContainer'>
+      <button className='quickSearchButton' onClick={this.handleDropDown}>Quick Search</button>
+      { showMenu ?
+        (<div className='topicDropDown'>
+          {topics
+            .map(topic => (
+              <p
+                className=''
+                key={topic.id}
+                onClick={this.handleSearch.bind(this)}
+              >
+                {topic.title}
+              </p>
+            ))}
+        </div>)
+        : (null)
+      }
     </div>
     );
   }
