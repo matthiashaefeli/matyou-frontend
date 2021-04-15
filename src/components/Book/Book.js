@@ -3,6 +3,7 @@ import axios from 'axios';
 import Detail from './Detail';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
+import './book.scss';
 
 class Book extends Component {
   state = {
@@ -45,14 +46,14 @@ class Book extends Component {
     }
 
     return (
-      <>
-        <p>{this.state.books.length} Books</p>
+      <div className='bookContainer'>
+        <p>Showing {this.state.books.length} Books</p>
         <div>
           {books.map(book => (
             <Detail key={book.id} detail={book} type='book' />
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }
