@@ -4,6 +4,7 @@ import Comment from '../Comment/Index';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import Navbar from '../Navbar/Navbar';
+import './index.scss';
 
 class Index extends Component {
   constructor(props) {
@@ -60,20 +61,22 @@ class Index extends Component {
     return (
       <article>
         <Navbar />
-        <div>
+        <div className='bookDetailContainer'>
           <div>
             <img src={url} alt={title} style={sectionStyle} />
           </div>
           <div>
             <p><b>Title: {title}</b></p>
+            <div className='commentContainer'>
             <p><b>Notes: </b></p>
-            <ul>
-              <p >
-              {comments.map(comment => (
-                <Comment key={comment.id} comment={comment} type='comment' />
-              ))}
-              </p>
-            </ul>
+              <ul>
+                <p>
+                {comments.map(comment => (
+                  <Comment key={comment.id} comment={comment} type='comment' />
+                ))}
+                </p>
+              </ul>
+            </div>
           </div>
         </div>
       </article>

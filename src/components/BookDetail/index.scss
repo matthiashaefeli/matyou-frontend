@@ -1,0 +1,15 @@
+.bookDetailContainer {
+  text-align: center;
+  height: 90vh;
+  overflow: auto;
+}
+
+.commentContainer {
+  text-align: left;
+  width: 90vw;
+  margin: auto;
+
+  b {
+    margin-left: 20px;
+  }
+}
