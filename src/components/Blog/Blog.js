@@ -46,14 +46,16 @@ class Blog extends Component {
     }
 
     return (
-      <>
-        <p >{this.state.blogs.length} Blogs</p>
-        <div>
-          {blogs.map(blog => (
-            <Detail key={blog.id} blog={blog} type='blog' />
-          ))}
+      <div>
+        <p className='blogCount'>{this.state.blogs.length} Blogs</p>
+        <div className='blogContainer'>
+          <div>
+            {blogs.map(blog => (
+              <Detail key={blog.id} blog={blog} type='blog' />
+            ))}
+          </div>
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -68,7 +68,7 @@ class Index extends Component {
           <div>
             <p><b>Title: {title}</b></p>
             <div className='commentContainer'>
-            <p><b>Notes: </b></p>
+              {comments.length === 0 ? null : <p><b>Notes: </b></p>}
               <ul>
                 <p>
                 {comments.map(comment => (
