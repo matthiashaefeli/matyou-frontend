@@ -46,14 +46,14 @@ class Challenge extends Component {
     }
 
     return (
-      <>
-        <p>{this.state.challenges.length} Challenges</p>
-        <div>
+      <div>
+        <p className='challengeCount'>{this.state.challenges.length} Challenges</p>
+        <div className='challengeContainer'>
           {challenges.map(challenge => (
             <Detail key={challenge.id} detail={challenge} type='challenge' />
           ))}
         </div>
-      </>
+      </div>
     )
   }
 }

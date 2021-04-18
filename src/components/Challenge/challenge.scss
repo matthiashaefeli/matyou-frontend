@@ -1,0 +1,28 @@
+.challengeCount {
+  text-align: center;
+  width: 70vw;
+  margin: 10px auto;
+}
+
+.challengeContainer {
+  text-align: center;
+  height: 60vh;
+  overflow: auto;
+  width: 50vw;
+  margin: auto;
+}
+
+.challengeDetail {
+  margin-top: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.challengeDetail:hover {
+  background-color: rgba(220,220,220, 1);
+}
+
+.challengeBody {
+  padding: 5px;
+}
