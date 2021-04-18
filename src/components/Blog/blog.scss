@@ -1,0 +1,28 @@
+.blogCount {
+  text-align: center;
+  width: 70vw;
+  margin: 10px auto;
+}
+
+.blogContainer {
+  text-align: center;
+  height: 60vh;
+  overflow: auto;
+  width: 50vw;
+  margin: auto;
+}
+
+.blogDetail {
+  margin-top: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.blogDetail:hover {
+  background-color: rgba(220,220,220, 1);
+}
+
+.blogBody {
+  padding: 5px;
+}

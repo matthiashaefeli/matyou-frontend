@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import './blog.scss';
 
 
 class Detail extends Component {
@@ -7,10 +8,10 @@ class Detail extends Component {
     const { title, body, url } = this.props.blog;
 
     return (
-      <>
-        <h1 onClick={() => window.open(url, "_blank")}>{title}</h1>
-        <p dangerouslySetInnerHTML={{ __html: body.body }} />
-      </>
+      <div className='blogDetail' onClick={() => window.open(url, "_blank")}>
+        <h1 className='blogTitle'>{title}</h1>
+        <p className='blogBody' dangerouslySetInnerHTML={{ __html: body.body }} />
+      </div>
     )
   }
 }
