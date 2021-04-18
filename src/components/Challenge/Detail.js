@@ -7,12 +7,10 @@ class Detail extends Component {
     const { title, body, url } = this.props.detail;
 
     return (
-      <>
-        <div onClick={() => window.open(url, "_blank")}>
-          <h1>{title}</h1>
-          <p dangerouslySetInnerHTML={{ __html: body.body }} />
-        </div>
-      </>
+      <div className='challengeDetail' onClick={() => window.open(url, "_blank")}>
+        <h1 className='challengeTitle'>{title}</h1>
+        <p className='challengeBody' dangerouslySetInnerHTML={{ __html: body.body }} />
+      </div>
     )
   }
 }
