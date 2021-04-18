@@ -60,7 +60,7 @@ class Index extends Component {
 
     return (
       <article>
-        <Navbar />
+        <Navbar  navTitle='Book'/>
         <div className='bookDetailContainer'>
           <div>
             <img src={url} alt={title} style={sectionStyle} />

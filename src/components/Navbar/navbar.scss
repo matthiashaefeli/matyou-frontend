@@ -19,6 +19,10 @@
   }
 }
 
+.activeLink {
+  display: none;
+}
+
 @media screen and (max-width: 950px) {
   .fontLink {
     display: none;

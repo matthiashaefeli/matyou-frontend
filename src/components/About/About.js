@@ -11,7 +11,7 @@ class About extends Component {
   render() {
     return (
       <article className='aboutHome'>
-        <Navbar />
+        <Navbar navTitle='About'/>
         <Title title={this.titleText} color={'black'} />
         <div className='aboutText'>
           This is my notebook. I'm working as a Software Engineer @ GraceHill and here is my journey.

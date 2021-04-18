@@ -10,7 +10,7 @@ class Index extends Component {
 
     return (
       <article>
-        <Navbar />
+        <Navbar navTitle='Blog'/>
         <Title title={titleText} color={'black'} />
         <Blog />
       </article>
