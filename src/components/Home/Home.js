@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './home.scss';
-import { useHistory } from 'react-router-dom';
 import Font from 'react-font'
 
-const Home = () => {
-  const history = useHistory();
+class Home extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-  const handleClick = (event) => {
+  handleClick = (event) => {
     const route = event.target.innerText.toLowerCase()
     const id = event.target.id
     let ids = ['front', 'back', 'left', 'right', 'up', 'down']
@@ -26,23 +27,25 @@ const Home = () => {
       document.getElementById(id).style.transform = 'scale(5)'
     }, 1000);
 
-    setTimeout(() => {  history.push(`/${route}`) }, 1500);
+    setTimeout(() => { this.props.history.push(`/${route}`) }, 1500)
   };
 
-  return (
+  render() {
+    return (
       <Font family='Actor'>
         <div className='container'>
           <div className='cube cubeAnimation'>
-            <div id='front' onClick={handleClick} data-style='translateZ(2000px) rotateZ(360deg)'>Notes</div>
-            <div id='back' onClick={handleClick} data-style='translateZ(-2000px) rotateY(180deg)  rotateZ(360deg)'>Challenges</div>
-            <div id='left' onClick={handleClick} data-style='translateX(-2000px) rotateY(-90deg) rotateZ(360deg)'>Books</div>
-            <div id='right' onClick={handleClick} data-style='translateX(2000px) rotateY(90deg) rotateZ(360deg)'>About</div>
+            <div id='front' onClick={this.handleClick} data-style='translateZ(2000px) rotateZ(360deg)'>Notes</div>
+            <div id='back' onClick={this.handleClick} data-style='translateZ(-2000px) rotateY(180deg)  rotateZ(360deg)'>Challenges</div>
+            <div id='left' onClick={this.handleClick} data-style='translateX(-2000px) rotateY(-90deg) rotateZ(360deg)'>Books</div>
+            <div id='right' onClick={this.handleClick} data-style='translateX(2000px) rotateY(90deg) rotateZ(360deg)'>About</div>
             <div id='up' data-style='translateY(-2000px) rotateX(90deg) rotateZ(360deg)'>Coming soon</div>
-            <div id='down' onClick={handleClick} data-style='translateY(2000px) rotateX(-90deg) rotateZ(360deg)'>Blogs</div>
+            <div id='down' onClick={this.handleClick} data-style='translateY(2000px) rotateX(-90deg) rotateZ(360deg)'>Blogs</div>
           </div>
         </div>
       </Font>
-  );
-};
+    );
+  }
+}
 
 export default Home;
