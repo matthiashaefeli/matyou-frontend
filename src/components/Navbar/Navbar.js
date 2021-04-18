@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome,
-         faBookOpen,
+import { faBookOpen,
          faBlog,
          faStickyNote,
          faGrimace,
@@ -10,25 +9,39 @@ import { faHome,
          faGlasses } from '@fortawesome/free-solid-svg-icons';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  setActive = (link) => {
+    return link === this.props.navTitle ? 'activeLink' : ''
+  }
+
   render() {
     return (
       <div className='links'>
-        <a href='/'><FontAwesomeIcon icon={faCube} />
+        <a href='/' className={this.setActive('Home')}>
+          <FontAwesomeIcon icon={faCube} />
           <span className='fontLink'> Home</span>
         </a>
-        <a href='/notes'><FontAwesomeIcon icon={faStickyNote} />
+        <a href='/notes' className={this.setActive('Note')}>
+          <FontAwesomeIcon icon={faStickyNote} />
           <span className='fontLink'> Notes</span>
         </a>
-        <a href='/books'><FontAwesomeIcon icon={faBookOpen} />
+        <a href='/books' className={this.setActive('Book')}>
+          <FontAwesomeIcon icon={faBookOpen} />
           <span className='fontLink'> Books</span>
         </a>
-        <a href='/blogs'><FontAwesomeIcon icon={faBlog} />
+        <a href='/blogs' className={this.setActive('Blog')}>
+          <FontAwesomeIcon icon={faBlog} />
           <span className='fontLink'> Blog</span>
         </a>
-        <a href='/challenges'><FontAwesomeIcon icon={faGlasses} />
+        <a href='/challenges' className={this.setActive('Challenge')}>
+          <FontAwesomeIcon icon={faGlasses} />
           <span className='fontLink'> Challenge</span>
         </a>
-        <a href='/about'><FontAwesomeIcon icon={faGrimace} />
+        <a href='/about' className={this.setActive('About')}>
+          <FontAwesomeIcon icon={faGrimace} />
           <span className='fontLink'> About</span>
         </a>
       </div>
