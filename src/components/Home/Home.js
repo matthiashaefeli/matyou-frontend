@@ -3,10 +3,6 @@ import './home.scss';
 import Font from 'react-font'
 
 class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleClick = (event) => {
     const route = event.target.innerText.toLowerCase()
     const id = event.target.id
