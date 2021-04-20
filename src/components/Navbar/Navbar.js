@@ -9,10 +9,6 @@ import { faBookOpen,
          faGlasses } from '@fortawesome/free-solid-svg-icons';
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   setActive = (link) => {
     return link === this.props.navTitle ? 'activeLink' : ''
   }
