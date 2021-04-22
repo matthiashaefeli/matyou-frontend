@@ -5,35 +5,22 @@
   margin: 10em auto
 }
 
-.cube {
+.cubeDiv {
+  border: 1px solid black;
   width: 200px;
   height: 200px;
-  transform-style: preserve-3d;
-  /* transform: rotate3d(1, 1, 0, 45deg); */
-  // animation: turn 10s linear infinite;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  div {
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background-color: black;
-    transition-duration: 2s;
-    font-size: 1.5em;
-  }
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: black;
+  transition-duration: 2s;
+  font-size: 1.5em;
 }
 
 .cubeAnimation {
-  animation: turn 10s linear infinite;
+  animation: turn 20s linear infinite;
 }
 
 #front {
@@ -69,4 +56,18 @@
 @keyframes turn {
   from { transform: rotate3d(0, 0, 0, 0); }
   to { transform: rotate3d(1, 1, 0, 360deg); }
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+}
+
+.speedButtons {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.fontAwesome:hover {
+  cursor: pointer;
 }
