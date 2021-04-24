@@ -87,7 +87,7 @@ class Home extends Component {
               <div className='cubeDiv' id='down' onClick={this.handleClick} data-style='translateY(2000px) rotateX(-90deg) rotateZ(360deg)'>Blogs</div>
             </div>
           </div>
-          <div>
+          <div className='settings'>
             <div className='backgroundButtons'>
               <p>Background</p>
               <div>
