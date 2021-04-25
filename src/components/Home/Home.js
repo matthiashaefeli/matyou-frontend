@@ -73,7 +73,6 @@ class Home extends Component {
       backgroundColor: `rgb(${this.state.bkgRed}, ${this.state.bkgGreen}, ${this.state.bkgBlue})`
     }
 
-
     return (
       <Font family='Actor'>
         <div style={homeStyle}>
