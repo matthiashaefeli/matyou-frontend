@@ -5,7 +5,7 @@ import './loading.scss'
 export default function Loading() {
   return (
     <div className='loading'>
-      <h4>Data loaging...</h4>
+      <h4>Data loading...</h4>
       <img src={LoadingGif} alt='' />
     </div>
   )
