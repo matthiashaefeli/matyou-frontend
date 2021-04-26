@@ -15,7 +15,8 @@ class Home extends Component {
     }
     return (
       <div>
-        {renderStyle()}
+        {/* {renderStyle()} */}
+        <StyleTwo history={this.props.history} />
       </div>
     );
   }
