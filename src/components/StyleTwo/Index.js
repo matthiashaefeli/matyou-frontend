@@ -13,7 +13,7 @@ class Index extends Component {
             <h1>Leave Your Comfort Zone Step By Step<br/>And You Will Feel Great Every Step You Take</h1>
             <p></p>
           </div>
-          <div><img src={Top} className='imageHome' /></div>
+          <div><img src={Top} className='imageHome' alt='Comfort Zone' /></div>
         </div>
       </div>
     );

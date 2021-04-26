@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import StyleOne from '../StyleOne/Index';
 import StyleTwo from '../StyleTwo/Index';
-import StyleThree from '../StyleThree/Index';
+// import StyleOne from '../StyleOne/Index';
+// import StyleThree from '../StyleThree/Index';
 
 class Home extends Component {
   render() {
-    const renderStyle = () => {
-      const array = [<StyleOne history={this.props.history} />,
-                     <StyleTwo history={this.props.history} />,
-                     <StyleThree history={this.props.history} />
-                    ]
+    // const renderStyle = () => {
+    //   const array = [<StyleOne history={this.props.history} />,
+    //                  <StyleTwo history={this.props.history} />,
+    //                  <StyleThree history={this.props.history} />
+    //                 ]
 
-      return array[Math.floor(Math.random() * array.length)]
-    }
+    //   return array[Math.floor(Math.random() * array.length)]
+    // }
     return (
       <div>
         {/* {renderStyle()} */}
