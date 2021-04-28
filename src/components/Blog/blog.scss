@@ -1,6 +1,11 @@
+.blogHomeContainer {
+  width: 80%;
+  margin: auto;
+}
+
 .blogCount {
   text-align: center;
-  width: 70vw;
+  width: 70%;
   margin: 10px auto;
 }
 
@@ -8,7 +13,7 @@
   text-align: center;
   height: 60vh;
   overflow: auto;
-  width: 50vw;
+  width: 70%;
   margin: auto;
 }
 
@@ -25,4 +30,10 @@
 
 .blogBody {
   padding: 5px;
+}
+
+@media screen and (min-width: 1200) {
+  .blogHomeContainer {
+    width: 60vw;
+  }
 }

@@ -1,4 +1,11 @@
+.noteContainerHome {
+  width: 80vw;
+  margin: auto;
+}
+
 .noteHome {
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   padding-top: 2em;
@@ -60,5 +67,11 @@
 
   .noteContainer {
     width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1200) {
+  .noteContainerHome {
+    width: 60vw;
   }
 }

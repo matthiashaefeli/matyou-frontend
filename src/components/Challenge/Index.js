@@ -9,7 +9,7 @@ class Index extends Component {
     const titleText = "On my journey to learn to code I used a lot of different challenges. Here are some Ruby and Javascript challenges. Have fun!"
 
     return (
-      <article>
+      <article className='challengeHomeContainer'>
         <Navbar  navTitle='Challenge'/>
         <Title title={titleText} color={'black'} />
         <Challenge />
