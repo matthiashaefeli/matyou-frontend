@@ -59,7 +59,7 @@ class Index extends Component {
     }
 
     return (
-      <article>
+      <article className='bookDetailHomeContainer'>
         <Navbar />
         <div className='bookDetailContainer'>
           <div>

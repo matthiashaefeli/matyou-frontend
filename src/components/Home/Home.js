@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StyleTwo from '../StyleTwo/Index';
+import './home.scss';
 // import StyleOne from '../StyleOne/Index';
 // import StyleThree from '../StyleThree/Index';
 
@@ -14,7 +15,7 @@ class Home extends Component {
     //   return array[Math.floor(Math.random() * array.length)]
     // }
     return (
-      <div>
+      <div className='homeContainer'>
         {/* {renderStyle()} */}
         <StyleTwo history={this.props.history} />
       </div>

@@ -1,9 +1,11 @@
 .aboutHome {
+  width: 80vw;
+  margin: auto;
   height: 100vh;
 }
 
 .aboutText {
-  width: 60vw;
+  width: 60%;
   margin: auto;
   padding-top: 30px;
 }
@@ -40,5 +42,11 @@
     a {
       color: grey;
     }
+  }
+}
+
+@media screen and (min-width: 1200) {
+  .aboutHome {
+    width: 60vw;
   }
 }

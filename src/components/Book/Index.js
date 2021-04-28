@@ -9,7 +9,7 @@ class Index extends Component {
     const titleText = "I really try to read a book sometimes. Here are all of the books I've read with some notes."
 
     return (
-      <article>
+      <article className='bookHomeContainer'>
         <Navbar  navTitle='Book'/>
         <Title title={titleText} color={'black'} />
         <Book />

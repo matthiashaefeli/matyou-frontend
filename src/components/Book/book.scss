@@ -1,7 +1,18 @@
+.bookHomeContainer {
+  width: 80vw;
+  margin: auto;
+}
+
 .bookContainer {
   text-align: center;
-  height: 70vh;
+  height: 70%;
   overflow: auto;
   width: 70vw;
   margin: auto;
+}
+
+@media screen and (min-width: 1200) {
+  .bookHomeContainer {
+    width: 60vw;
+  }
 }

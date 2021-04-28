@@ -1,6 +1,11 @@
+.challengeHomeContainer {
+  width: 80vw;
+  margin: auto;
+}
+
 .challengeCount {
   text-align: center;
-  width: 70vw;
+  width: 70%;
   margin: 10px auto;
 }
 
@@ -8,7 +13,7 @@
   text-align: center;
   height: 60vh;
   overflow: auto;
-  width: 50vw;
+  width: 50%;
   margin: auto;
 }
 
@@ -25,4 +30,10 @@
 
 .challengeBody {
   padding: 5px;
+}
+
+@media screen and (min-width: 1200) {
+  .challengeHomeContainer {
+    width: 60vw;
+  }
 }
