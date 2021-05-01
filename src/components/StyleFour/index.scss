@@ -1,0 +1,39 @@
+.home {
+  text-align: center;
+}
+
+.outerPictureFrame {
+  border: 1px solid black;
+  width: 300px;
+  height: 400px;
+  margin: 20px auto;
+  box-shadow: 5px 10px #888888;
+  display: flex;
+  justify-content: center;
+  background-color: #634631;
+}
+
+.outerPictureFramein {
+  width: 93%;
+  height: 93%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #312318;
+}
+
+.innerPictureFrame {
+  border: 1px solid black;
+  width: 93%;
+  height: 93%;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.pictureText {
+  width: 80%;
+  margin: auto;
+  font-size: 2.1em;
+}
