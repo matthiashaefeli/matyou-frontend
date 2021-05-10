@@ -6,7 +6,7 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar navTitle='Home'/>
         <div className='home'>
           <div className='outerPictureFrame'>
             <div className='outerPictureFramein'>
