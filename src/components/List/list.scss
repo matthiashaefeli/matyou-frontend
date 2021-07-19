@@ -1,0 +1,77 @@
+.listContainerHome {
+  width: 80vw;
+  margin: auto;
+}
+
+.listHome {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2em;
+  justify-content: space-around;
+}
+
+.listSearch {
+  flex-direction: column;
+  margin: auto;
+  text-align: left;
+  padding-left: 1em;
+  width: 40vw;
+  height: 55vh;
+}
+
+.listContainer {
+  width: 40vw;
+  height: 55vh;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+.listText:hover {
+  background-color: rgba(220,220,220, 1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+  .listSearch {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .listHome {
+    flex-direction: column;
+  }
+
+  .listSearch {
+    width: 80vw;
+    text-align: center;
+  }
+
+  .inputField {
+    margin: 0 auto;
+    height: 3em;
+    width: 200px;
+  }
+
+  .clearSearch {
+    margin: 10px auto;
+    height: 3em;
+    width: 210px;
+  }
+
+  .listContainer {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1200) {
+  .listContainerHome {
+    width: 60vw;
+  }
+}

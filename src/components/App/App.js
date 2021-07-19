@@ -7,6 +7,7 @@ import Blog from '../Blog/Index';
 import Book from '../Book/Index';
 import About from '../About/About';
 import BookDetail from '../BookDetail/Index';
+import List from '../List/Index';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Route exact path='/books' component={Book} />
         <Route exact path='/about' component={About} />
         <Route exact path='/book-detail' component={BookDetail} />
+        <Route exact path='/list' component={List} />
         <Route component={Error} />
     </Switch>
     );
