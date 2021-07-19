@@ -6,6 +6,7 @@ import { faBookOpen,
          faStickyNote,
          faGrimace,
          faCube,
+         faList,
          faGlasses } from '@fortawesome/free-solid-svg-icons';
 
 class Navbar extends Component {
@@ -35,6 +36,10 @@ class Navbar extends Component {
         <a href='/challenges' className={this.setActive('Challenge')}>
           <FontAwesomeIcon icon={faGlasses} />
           <span className='fontLink'> Challenge</span>
+        </a>
+        <a href='/list' className={this.setActive('List')}>
+          <FontAwesomeIcon icon={faList} />
+          <span className='fontLink'> Link-List</span>
         </a>
         <a href='/about' className={this.setActive('About')}>
           <FontAwesomeIcon icon={faGrimace} />
