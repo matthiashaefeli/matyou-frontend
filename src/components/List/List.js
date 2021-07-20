@@ -94,7 +94,12 @@ class List extends Component {
                   className='listText'
                   key={li.id}
                 >
-                  {li.title}
+                  {li.title}:
+                  {li.comments.map(
+                    c => (
+                      <div className='listLink' dangerouslySetInnerHTML={{ __html: c.replace(/href/g, "target='_blank' href") }} />
+                    )
+                  )}
                 </p>
               ))}
           </div>
