@@ -90,17 +90,17 @@ class List extends Component {
             {list
               .filter(li => li.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
               .map(li => (
-                <p
+                <div
                   className='listText'
                   key={li.id}
                 >
-                  {li.title}:
+                  <b>{li.title}:</b>
                   {li.comments.map(
                     c => (
-                      <div className='listLink' dangerouslySetInnerHTML={{ __html: c.replace(/href/g, "target='_blank' href") }} />
+                      <p className='listLink' dangerouslySetInnerHTML={{ __html: c.replace(/href/g, "target='_blank' href") }} />
                     )
                   )}
-                </p>
+                </div>
               ))}
           </div>
         </div>
