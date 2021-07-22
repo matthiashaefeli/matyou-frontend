@@ -30,11 +30,19 @@
   overflow: auto;
 }
 
+.linkListTitle {
+  cursor: pointer;
+}
+
 .listLink {
   a {
     text-decoration: none;
     color: black;
   }
+}
+
+.listHidden {
+  display: none;
 }
 
 @media screen and (max-width: 780px) {
