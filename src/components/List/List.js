@@ -17,7 +17,6 @@ class List extends Component {
     axios.get('https://warm-anchorage-02243.herokuapp.com/data/lists')
     .then(
       result => {
-        console.log(result.data)
         this.setState({
           isLoaded: true,
           list: result.data,
@@ -57,6 +56,18 @@ class List extends Component {
     this.handleSearch({target: { value: '' }})
   }
 
+  showLinks = (e, id) => {
+    const class_name = 'link_' + id
+    let list = document.getElementsByClassName(class_name)
+    for (let item of list) {
+      if (item.classList.contains('listHidden')) {
+        item.classList.remove("listHidden")
+      } else {
+        item.classList.add("listHidden")
+      }
+  }
+  }
+
   render() {
     const { error, isLoaded, list, listCount } = this.state;
 
@@ -94,10 +105,13 @@ class List extends Component {
                   className='listText'
                   key={li.id}
                 >
-                  <b>{li.title}:</b>
-                  {li.comments.map(
-                    c => (
-                      <p className='listLink' dangerouslySetInnerHTML={{ __html: c.replace(/href/g, "target='_blank' href") }} />
+                  <div onClick={(e) => this.showLinks(e, li.id)} className='linkListTitle'>{li.title}</div>
+                    {li.comments.map(c => (
+                      <p
+                        className={`listHidden listLink link_${li.id}`}
+                        key={c.id}
+                        dangerouslySetInnerHTML={{ __html: c.body.replace(/href/g, "target='_blank' href") }}
+                      />
                     )
                   )}
                 </div>
