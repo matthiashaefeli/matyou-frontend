@@ -39,7 +39,11 @@
     text-decoration: none;
     color: black;
   }
+  :hover {
+    color: green;
+  }
 }
+
 
 .listHidden {
   display: none;

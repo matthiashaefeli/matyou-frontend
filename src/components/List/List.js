@@ -57,13 +57,19 @@ class List extends Component {
   }
 
   showLinks = (e, id) => {
-    const class_name = 'link_' + id
+    const class_name = 'linkList_' + id
+    const link_id = 'link_' + id
     let list = document.getElementsByClassName(class_name)
+    let link = document.getElementById(link_id)
     for (let item of list) {
       if (item.classList.contains('listHidden')) {
         item.classList.remove("listHidden")
+        link.style.color = 'green'
+        link.style.fontWeight = '700';
       } else {
         item.classList.add("listHidden")
+        link.style.color = 'black'
+        link.style.fontWeight = '400';
       }
   }
   }
@@ -105,15 +111,20 @@ class List extends Component {
                   className='listText'
                   key={li.id}
                 >
-                  <div onClick={(e) => this.showLinks(e, li.id)} className='linkListTitle'>{li.title}</div>
-                    {li.comments.map(c => (
-                      <p
-                        className={`listHidden listLink link_${li.id}`}
-                        key={c.id}
-                        dangerouslySetInnerHTML={{ __html: c.body.replace(/href/g, "target='_blank' href") }}
-                      />
-                    )
-                  )}
+                  <div
+                    onClick={(e) => this.showLinks(e, li.id)}
+                    className='linkListTitle'
+                    id={`link_${li.id}`}
+                  >
+                    {li.title}
+                  </div>
+                  {li.comments.map(c => (
+                    <ul
+                      className={`listHidden listLink linkList_${li.id}`}
+                      key={c.id}
+                      dangerouslySetInnerHTML={{ __html: c.body.replace(/href/g, "target='_blank' href") }}
+                    />
+                  ))}
                 </div>
               ))}
           </div>
