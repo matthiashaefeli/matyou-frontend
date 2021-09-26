@@ -122,7 +122,7 @@ class List extends Component {
                     <ul
                       className={`listHidden listLink linkList_${li.id}`}
                       key={c.id}
-                      dangerouslySetInnerHTML={{ __html: c.body.replace(/href/g, "target='_blank' href") }}
+                      dangerouslySetInnerHTML={{ __html: c.body.replace(/(?:&nbsp;|<br>)/g,'').replace(/href/g, "target='_blank' href") }}
                     />
                   ))}
                 </div>
