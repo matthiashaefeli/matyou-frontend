@@ -19,7 +19,7 @@ class Index extends Component {
   }
 
   componentDidMount = () => {
-    axios.get(`https://warm-anchorage-02243.herokuapp.com/data/book/${this.props.location.state.id}`)
+    axios.get(`https://warm-anchorage-02243.herokuapp.com/data/books/${this.props.location.state.id}`)
       .then(
         result => {
           this.setState({
