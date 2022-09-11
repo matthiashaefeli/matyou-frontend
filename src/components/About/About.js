@@ -14,7 +14,7 @@ class About extends Component {
         <Navbar navTitle='About'/>
         <Title title={this.titleText} color={'black'} />
         <div className='aboutText'>
-          This is my Notebook. I'm working as a Software Engineer @ GraceHill and here is my journey.
+          This is my Notebook. I'm working as a Software Engineer @ <a href="https://get.popmenu.com/" target="_blank" rel="noopener noreferrer">PopMenu</a> and here is my journey.
           If I struggle with something or learn something new, I write it down here.
           My Blog is the result of a little bit more research.
           The Notes are a reminder of stuff that I'm using and I do not remember how.
